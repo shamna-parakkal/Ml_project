@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antibiotic sales forcasting</title>
+</head>
+</head>
+<body bgcolor="#2B547E" >
+	<div>
+		<form class="form-detail" action="{% url 'result' %}" method="post">
+                {% csrf_token %}
+                
+                <h1   style="color:White;">Anti Biotic Sales Prediction</h2><br>
+                <h3 style="color:White;"> Enter the Month and Year You Want to Predict the Antibiotic sales rate.</h3><br>
+             <div>
+               <label for="Month" style="color:White;">Choose the Month:</label>
+
+             <select name="Month" id="Month">
+               <option value="01">01</option>
+               <option value="02">02</option>
+               <option value="03">03</option>
+               <option value="04">04</option>
+               <option value="05">05</option>
+               <option value="06">06</option>
+               <option value="07">07</option>
+               <option value="08">08</option>
+               <option value="09">09</option>
+               <option value="10">10</option>
+               <option value="11">11</option>
+               <option value="12">12</option>
+              </select>
+               <div>
+
+                <br><h3 style="color:White;">Year    <input type="text" required name="Year"></h6>
+               
+                <input type= "submit" name="submit" value="Submit"><br>
+                {% if Antibiotic_Sales %}
+                <h3 style="color:White;">Antibiotic Sales is {{ Antibiotic_Sales }}</h3>
+                {% endif %}
+
+        </form>
+                </div>
+		</div>	      
+	</div> </div>
+</body>
+</html>
